@@ -1,0 +1,34 @@
+{
+  "name": "@autheur/datasets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "default": {
+        "import": "./dist/index.mjs",
+        "require": "./dist/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "test": "vitest --passWithNoTests",
+    "prepack": "npm run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@autheur/operators": "workspace:^1.0.0"
+  },
+  "devDependencies": {
+    "unbuild": "^0.7.4",
+    "vitest": "^0.9.4"
+  }
+}

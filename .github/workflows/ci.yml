@@ -1,0 +1,26 @@
+name: CI
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 7.0.0-rc.8
+      - name: Setup node env
+        uses: actions/setup-node@v3.0.0
+        with:
+          node-version: 16
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Run test
+        run: pnpm -r run test --run
+
+      - name: Build packages
+        run: pnpm -r run build
