@@ -6,10 +6,11 @@
   "keywords": [
     "random",
     "sentence",
+    "french",
     "generator"
   ],
   "private": true,
   "license": "MIT",
   "bugs": "https://github.com/CorentinTh/autheur/issues",
-  "homepage": "https://github.com/CorentinTh/autheur#readme"
+  "homepage": "https://autheur.vercel.app"
 }

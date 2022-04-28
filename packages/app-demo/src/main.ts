@@ -5,12 +5,10 @@ import { generate, nounPhrase } from '@autheur/generator';
 const refreshButton = document.querySelector<HTMLButtonElement>('#refresh-button')!;
 const sentenceContainer = document.querySelector<HTMLDivElement>('#sentence-container')!;
 
-function refreshToken() {
+function refreshSentence() {
   sentenceContainer.innerText = generate(nounPhrase());
 }
 
-refreshButton.onclick = () => {
-  refreshToken();
-};
+refreshButton.onclick = refreshSentence;
 
-refreshToken();
+refreshSentence();

@@ -1,7 +1,20 @@
 {
   "name": "@autheur/generator",
   "version": "1.0.0",
-  "description": "",
+  "description": "Random french sentence generator",
+  "funding": "https://github.com/sponsors/CorentinTh",
+  "author": "Corentin Th <corentin.thomasset74+npm@gmail.com> (https://github.com/CorentinTh)",
+  "keywords": [
+    "word",
+    "sentence",
+    "french",
+    "generator",
+    "random"
+  ],
+  "private": false,
+  "license": "MIT",
+  "bugs": "https://github.com/CorentinTh/autheur/issues",
+  "homepage": "https://autheur.vercel.app",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -19,16 +32,16 @@
   "scripts": {
     "build": "unbuild",
     "test": "vitest --passWithNoTests",
-    "prepack": "npm run build"
+    "prepack": "npm run build",
+    "release": "standard-version"
   },
-  "keywords": [],
-  "author": "",
-  "license": "MIT",
   "dependencies": {
     "@autheur/datasets": "workspace:^1.0.0",
-    "@autheur/operators": "workspace:^1.0.0"
+    "@autheur/operators": "workspace:^1.0.0",
+    "defu": "^6.0.0"
   },
   "devDependencies": {
+    "standard-version": "^9.3.2",
     "unbuild": "^0.7.4",
     "vitest": "^0.9.4"
   }

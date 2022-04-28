@@ -4,6 +4,7 @@ import { adjectives } from './data/adjectifs';
 import { adverbs } from './data/adverbes';
 
 export * from './data/determinants';
+export { mergeDeterminantMap } from './determinants.model';
 export { Noun, Adjective, Gender };
 export { nouns, adjectives, getRandomAdjective, getRandomNoun, adverbs, getRandomAdverbe };
 

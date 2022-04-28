@@ -527,7 +527,7 @@ export const nouns = [
   ['lit', 'm'],
   ['litre', 'm'],
   ['livre', 'm'],
-  ['louche', 'm'],
+  ['louche', 'f'],
   ['loup', 'm'],
   ['loupe', 'f'],
   ['luge', 'f'],

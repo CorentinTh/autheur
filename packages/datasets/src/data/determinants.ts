@@ -1,10 +1,14 @@
-type DeterminantMap = {
+import { mergeDeterminantMap } from '../determinants.model';
+
+export type DeterminantMap = {
   [k in 'masculin' | 'feminin' | 'plural']: {
     [k in 'withVowel' | 'withoutVowel' | 'default']: string[];
   };
 };
 
-export const determinants: { [k: string]: DeterminantMap } = {
+export type DeterminantType = 'defined' | 'undefined' | 'possessive' | 'demonstrative';
+
+export const determinants: { [k in DeterminantType]: DeterminantMap } = {
   defined: {
     masculin: {
       withVowel: ["l'"],
@@ -75,31 +79,4 @@ export const determinants: { [k: string]: DeterminantMap } = {
   },
 };
 
-export const unscopedDeterminants = Object.values(determinants).reduce(
-  (acc: DeterminantMap, v: DeterminantMap) => {
-    for (const [gender, types] of Object.entries(v)) {
-      for (const [type, arr] of Object.entries(types)) {
-        acc[gender as 'masculin' | 'feminin' | 'plural'][type as 'withVowel' | 'withoutVowel' | 'default'].push(...arr);
-      }
-    }
-
-    return acc;
-  },
-  {
-    masculin: {
-      withVowel: [],
-      withoutVowel: [],
-      default: [],
-    },
-    feminin: {
-      withVowel: [],
-      withoutVowel: [],
-      default: [],
-    },
-    plural: {
-      withVowel: [],
-      withoutVowel: [],
-      default: [],
-    },
-  }
-);
+export const unscopedDeterminants = Object.values(determinants).reduce(mergeDeterminantMap, undefined)!;

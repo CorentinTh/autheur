@@ -1,29 +1,11 @@
-# autheur
+# @autheur/generator
 
-[![CI](https://github.com/CorentinTh/autheur/actions/workflows/ci.yml/badge.svg)](https://github.com/CorentinTh/autheur/actions/workflows/ci.yml)
-
-> Random french sentence generator
+Random french sentence generator
 
 ## Installation
 
-Install using your favorite dependency manager.
-
-**NPM**
-
-```bash
-npm install @autheur/generator
 ```
-
-**PNPM**
-
-```bash
-pnpm install @autheur/generator
-```
-
-**Yarn**
-
-```bash
-yarn add @autheur/generator
+npm i @autheur/generator
 ```
 
 ## Usage
@@ -122,15 +104,15 @@ generate([word("l'", { noSpaceAfter: true }), word('arbre')]); // l'arbre
 generate([word("l'"), word('arbre', { noSpaceBefore: true })]); // l'arbre
 ```
 
-## Packages
+## Other packages
 
-This is a monorepo with the following packages:
+This is a from a monorepo with the following packages:
 
-| Package                                       | Description                                                  |
-| --------------------------------------------- | ------------------------------------------------------------ |
-| [`@autheur/dataset`](./packages/datasets/)    | Dataset of sorted french words broke down by categories      |
-| [`@autheur/generator`](./packages/generator/) | The generator itself with they logic                         |
-| [`@autheur/operators`](./packages/operators/) | Utilities to manipulate words (ex: pluralize, feminize, ...) |
+| Package                                                                                     | Description                                                  |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------ |
+| [`@autheur/dataset`](https://github.com/CorentinTh/autheur/tree/main/packages/datasets/)    | Dataset of sorted french words broke down by categories      |
+| [`@autheur/generator`](https://github.com/CorentinTh/autheur/tree/main/packages/generator/) | The generator itself with they logic                         |
+| [`@autheur/operators`](https://github.com/CorentinTh/autheur/tree/main/packages/operators/) | Utilities to manipulate words (ex: pluralize, feminize, ...) |
 
 ## Credits
 

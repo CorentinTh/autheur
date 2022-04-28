@@ -70,6 +70,27 @@ capitalize('jeune'); // Jeune
 capitalize('école'); // École
 ```
 
+### `getRandomItemInArray`
+
+Return a random item from an array
+
+```typescript
+import { getRandomItemInArray } from '@autheur/operators';
+
+getRandomItemInArray(['foo', 'bar', 'baz']); // baz
+getRandomItemInArray(['foo', 'bar', 'baz']); // foo
+```
+
+## Other packages
+
+This is a from a monorepo with the following packages:
+
+| Package                                                                                     | Description                                                  |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------ |
+| [`@autheur/dataset`](https://github.com/CorentinTh/autheur/tree/main/packages/datasets/)    | Dataset of sorted french words broke down by categories      |
+| [`@autheur/generator`](https://github.com/CorentinTh/autheur/tree/main/packages/generator/) | The generator itself with they logic                         |
+| [`@autheur/operators`](https://github.com/CorentinTh/autheur/tree/main/packages/operators/) | Utilities to manipulate words (ex: pluralize, feminize, ...) |
+
 ## Credits
 
 Coded with ❤️ by [Corentin Thomasset](//corentin-thomasset.fr).

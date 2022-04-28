@@ -1,7 +1,23 @@
 {
   "name": "@autheur/operators",
   "version": "1.0.0",
-  "description": "",
+  "description": "Word and sentence operators for french sentence creation",
+  "funding": "https://github.com/sponsors/CorentinTh",
+  "author": "Corentin Th <corentin.thomasset74+npm@gmail.com> (https://github.com/CorentinTh)",
+  "keywords": [
+    "word",
+    "sentence",
+    "operators",
+    "french",
+    "generator",
+    "feminize",
+    "capitalize",
+    "pluralize"
+  ],
+  "private": false,
+  "license": "MIT",
+  "bugs": "https://github.com/CorentinTh/autheur/issues",
+  "homepage": "https://autheur.vercel.app",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -19,12 +35,11 @@
   "scripts": {
     "build": "unbuild",
     "test": "vitest",
-    "prepack": "npm run build"
+    "prepack": "npm run build",
+    "release": "standard-version"
   },
-  "keywords": [],
-  "author": "",
-  "license": "MIT",
   "devDependencies": {
+    "standard-version": "^9.3.2",
     "unbuild": "^0.7.4",
     "vitest": "^0.9.4"
   }
