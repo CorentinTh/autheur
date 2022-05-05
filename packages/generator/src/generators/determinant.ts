@@ -1,7 +1,14 @@
 import { determinants, DeterminantType, mergeDeterminantMap, DeterminantMap } from '@autheur/datasets';
 import { getRandomItemInArray, isFirstCharAVowelOrAnH } from '@autheur/operators';
-import defu from 'defu';
+import { createDefu } from 'defu';
 import type { Generator } from '../generator';
+
+const defu = createDefu((obj, key, value) => {
+  if (Array.isArray(obj[key])) {
+    obj[key] = value;
+    return true;
+  }
+});
 
 export const determinant = (config: { types?: DeterminantType[] } = {}): Generator => {
   const { types } = defu(config, { types: ['undefined', 'defined', 'possessive', 'demonstrative'] });
