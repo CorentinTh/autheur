@@ -95,13 +95,28 @@ import { generate, word } from '@autheur/generator';
 generate([word('foobar')]); // foobar
 ```
 
-You can specify if your word is preceded or followed by a space if their is another word
+### `subject`
+
+Generate an subject to be used with a verb.
 
 ```typescript
-import { generate, word } from '@autheur/generator';
+import { generate, subject } from '@autheur/generator';
 
-generate([word("l'", { noSpaceAfter: true }), word('arbre')]); // l'arbre
-generate([word("l'"), word('arbre', { noSpaceBefore: true })]); // l'arbre
+generate([subject()]); // je
+```
+
+You can specify the gender and/or the plurality
+
+```typescript
+import { generate, subject } from '@autheur/generator';
+
+generate([subject({ isPlural: true })]); // nous, vous, ils, elles
+generate([subject({ isPlural: false })]); // je, tu, il, elle, on
+
+generate([subject({ isFeminine: true })]); // je, tu, on, elle, nous, vous, elles
+generate([subject({ isFeminine: false })]); // je, tu, on, il, nous, vous, ils
+
+generate([subject({ isFeminine: false, isPlural: false })]); // je, tu, on, elle
 ```
 
 ### `oneOf`
