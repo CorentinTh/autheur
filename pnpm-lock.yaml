@@ -7,15 +7,17 @@ importers:
 
   packages/app-demo:
     specifiers:
-      '@autheur/generator': workspace:^1.0.0
+      '@autheur/generator': workspace:^
       less: ^4.1.2
       normalize.css: ^8.0.1
+      plausible-tracker: ^0.3.5
       standard-version: ^9.3.2
       typescript: ^4.5.4
       vite: ^2.9.5
     dependencies:
       '@autheur/generator': link:../generator
       normalize.css: 8.0.1
+      plausible-tracker: 0.3.5
     devDependencies:
       less: 4.1.2
       standard-version: 9.3.2
@@ -2168,6 +2170,11 @@ packages:
       mlly: 0.3.19
       pathe: 0.2.0
     dev: true
+
+  /plausible-tracker/0.3.5:
+    resolution: {integrity: sha512-6c6VPdPtI9KmIsfr8zLBViIDMt369eeaNA1J8JrAmAtrpSkeJWvjwcJ+cLn7gVJn5AtQWC8NgSEee2d/5RNytA==}
+    engines: {node: '>=10'}
+    dev: false
 
   /postcss/8.4.12:
     resolution: {integrity: sha512-lg6eITwYe9v6Hr5CncVbK70SoioNQIq81nsaG86ev5hAidQvmOeETBqs7jm43K2F5/Ley3ytDtriImV6TpNiSg==}
