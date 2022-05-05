@@ -16,5 +16,8 @@
   "private": true,
   "license": "MIT",
   "bugs": "https://github.com/CorentinTh/autheur/issues",
-  "homepage": "https://autheur.vercel.app"
+  "homepage": "https://autheur.vercel.app",
+  "devDependencies": {
+    "@changesets/cli": "^2.22.0"
+  }
 }
