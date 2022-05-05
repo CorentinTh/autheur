@@ -1,6 +1,6 @@
 {
   "name": "@autheur/datasets",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "French words datasets for sentence generation",
   "funding": "https://github.com/sponsors/CorentinTh",
   "author": "Corentin Th <corentin.thomasset74+npm@gmail.com> (https://github.com/CorentinTh)",
@@ -16,6 +16,10 @@
   "bugs": "https://github.com/CorentinTh/autheur/issues",
   "homepage": "https://autheur.vercel.app",
   "main": "./dist/index.cjs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CorentinTh/autheur"
+  },
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "exports": {
@@ -36,7 +40,7 @@
     "release": "standard-version"
   },
   "dependencies": {
-    "@autheur/operators": "workspace:^1.0.0"
+    "@autheur/operators": "workspace:^"
   },
   "devDependencies": {
     "standard-version": "^9.3.2",

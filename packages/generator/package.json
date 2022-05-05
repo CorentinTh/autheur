@@ -1,6 +1,6 @@
 {
   "name": "@autheur/generator",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Random french sentence generator",
   "funding": "https://github.com/sponsors/CorentinTh",
   "author": "Corentin Th <corentin.thomasset74+npm@gmail.com> (https://github.com/CorentinTh)",
@@ -16,6 +16,10 @@
   "bugs": "https://github.com/CorentinTh/autheur/issues",
   "homepage": "https://autheur.vercel.app",
   "main": "./dist/index.cjs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CorentinTh/autheur"
+  },
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "exports": {
@@ -36,8 +40,8 @@
     "release": "standard-version"
   },
   "dependencies": {
-    "@autheur/datasets": "workspace:^1.0.0",
-    "@autheur/operators": "workspace:^1.0.0",
+    "@autheur/datasets": "workspace:^",
+    "@autheur/operators": "workspace:^",
     "defu": "^6.0.0"
   },
   "devDependencies": {

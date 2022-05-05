@@ -18,6 +18,10 @@
   "license": "MIT",
   "bugs": "https://github.com/CorentinTh/autheur/issues",
   "homepage": "https://autheur.vercel.app",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CorentinTh/autheur"
+  },
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",

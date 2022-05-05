@@ -8,8 +8,12 @@
     "preview": "vite preview",
     "release": "standard-version"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CorentinTh/autheur"
+  },
   "dependencies": {
-    "@autheur/generator": "workspace:^1.0.0",
+    "@autheur/generator": "workspace:^",
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {

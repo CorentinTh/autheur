@@ -9,6 +9,10 @@
     "french",
     "generator"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CorentinTh/autheur"
+  },
   "private": true,
   "license": "MIT",
   "bugs": "https://github.com/CorentinTh/autheur/issues",
