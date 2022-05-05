@@ -5,8 +5,8 @@ const config: BuildConfig = {
   declaration: true,
   rollup: {
     emitCJS: true,
+    esbuild: { target: 'es6' },
   },
-  dependencies: ['@autheur/datasets'],
 };
 
 export default config;
