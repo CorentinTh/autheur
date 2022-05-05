@@ -44,7 +44,6 @@
     "defu": "^6.0.0"
   },
   "devDependencies": {
-    "standard-version": "^9.3.2",
     "unbuild": "^0.7.4",
     "vitest": "^0.9.4"
   }
