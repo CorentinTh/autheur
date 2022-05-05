@@ -278,7 +278,7 @@ export const nouns = [
   ['couverture', 'f'],
   ['crabe', 'm'],
   ['craie', 'f'],
-  ['cravate', 'm'],
+  ['cravate', 'f'],
   ['crayon', 'm'],
   ['crèche', 'f'],
   ['crevette', 'f'],
