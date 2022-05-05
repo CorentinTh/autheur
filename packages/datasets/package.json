@@ -1,6 +1,6 @@
 {
   "name": "@autheur/datasets",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "French words datasets for sentence generation",
   "funding": "https://github.com/sponsors/CorentinTh",
   "author": "Corentin Th <corentin.thomasset74+npm@gmail.com> (https://github.com/CorentinTh)",
