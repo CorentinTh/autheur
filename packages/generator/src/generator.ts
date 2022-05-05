@@ -17,7 +17,7 @@ type GeneratedConfig = {
 
 type BaseGenerator = {
   imposeForm: false;
-  generate: (conf: { subject: { word?: string; form: WordForm } }) => Omit<GeneratedConfig, 'form'>;
+  generate: (conf: { subject: { word?: string; form: WordForm }; nextWordConfig: ({ word?: string } & SpacerConfig) | null }) => Omit<GeneratedConfig, 'form'>;
 };
 type FormImposerGenerator = {
   imposeForm: true;
@@ -25,32 +25,34 @@ type FormImposerGenerator = {
 };
 export type Generator = BaseGenerator | FormImposerGenerator;
 
-function getSpacer({ generated, previouslyGenerated }: { generated: SpacerConfig; previouslyGenerated: SpacerConfig | null | undefined }) {
-  if (!previouslyGenerated) {
+function getSpacer({ currentWordConfig, nextWordConfig }: { currentWordConfig: SpacerConfig; nextWordConfig: SpacerConfig | null | undefined }) {
+  if (!nextWordConfig) {
     return '';
   }
 
-  return generated.noSpaceBefore || previouslyGenerated.noSpaceAfter ? '' : ' ';
+  return nextWordConfig.noSpaceBefore || currentWordConfig.noSpaceAfter ? '' : ' ';
 }
 
 const getDummySubject = (): { form: WordForm } => ({ form: { gender: Math.random() > 0.5 ? 'f' : 'm', isPlural: Math.random() > 0.5 } });
+
+function createNextWordGetter() {}
 
 export function generate(wordGenerators: Generator[]) {
   const { generate: subjectGenerator } = (wordGenerators.find(({ imposeForm }) => imposeForm) ?? {}) as FormImposerGenerator;
 
   const subject = subjectGenerator?.() ?? getDummySubject();
-  let sentence = '';
-  let previouslyGenerated = null;
-  for (const { generate } of wordGenerators) {
+  let reversedSentence = [];
+  let nextWordConfig = null;
+  for (const { generate } of wordGenerators.slice().reverse()) {
     if (generate === subjectGenerator) {
-      sentence += getSpacer({ previouslyGenerated, generated: subject }) + subject.word;
-      previouslyGenerated = subject;
+      reversedSentence.push(getSpacer({ nextWordConfig, currentWordConfig: subject }), subject.word);
+      nextWordConfig = subject;
     } else {
-      const generated = generate({ subject });
-      sentence += getSpacer({ previouslyGenerated, generated }) + generated.word;
-      previouslyGenerated = generated;
+      const currentWordConfig: Omit<GeneratedConfig, 'form'> = generate({ subject, nextWordConfig });
+      reversedSentence.push(getSpacer({ nextWordConfig, currentWordConfig }), currentWordConfig.word);
+      nextWordConfig = currentWordConfig;
     }
   }
 
-  return sentence;
+  return reversedSentence.slice().reverse().join('');
 }

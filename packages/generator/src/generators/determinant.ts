@@ -11,12 +11,12 @@ export const determinant = (config: { types?: DeterminantType[] } = {}): Generat
     imposeForm: false,
     generate: ({
       subject: {
-        word,
         form: { gender, isPlural },
       },
+      nextWordConfig,
     }) => {
       const corpus: string[] = [];
-      const startsWithAVowelOrAH = isFirstCharAVowelOrAnH(word);
+      const startsWithAVowelOrAH = nextWordConfig ? isFirstCharAVowelOrAnH(nextWordConfig?.word) : false;
       const type = isPlural ? 'plural' : gender === 'f' ? 'feminin' : 'masculin';
       const group = determinantsMergedByTypes?.[type] ?? { default: [], withVowel: [], withoutVowel: [] };
 
