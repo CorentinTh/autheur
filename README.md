@@ -122,6 +122,16 @@ generate([word("l'", { noSpaceAfter: true }), word('arbre')]); // l'arbre
 generate([word("l'"), word('arbre', { noSpaceBefore: true })]); // l'arbre
 ```
 
+### `oneOf`
+
+Get a random word/sentence from a list that you specify.
+
+```typescript
+import { generate, oneOf } from '@autheur/generator';
+
+generate([oneOf(['foobar', 'yolo'])]); // yolo
+```
+
 ## Packages
 
 This is a monorepo with the following packages:
