@@ -2,7 +2,14 @@
 
 [![CI](https://github.com/CorentinTh/autheur/actions/workflows/ci.yml/badge.svg)](https://github.com/CorentinTh/autheur/actions/workflows/ci.yml)
 
-> Random french sentence generator
+> Simple random french sentence (with correct grammar) generator
+
+```typescript
+import { generate, determinant, noun, adverb, adjective } from '@autheur/generator';
+
+const sentence = generate([determinant(), noun(), adverb(), adjective()]);
+// une croix peut-être importante
+```
 
 ## Installation
 
